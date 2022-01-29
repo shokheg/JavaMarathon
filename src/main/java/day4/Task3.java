@@ -16,7 +16,41 @@ import java.util.Random;
 
 public class Task3 {
     public static void main(String[] args) {
+
         Random rand = new Random();
+
+        int [][] array = new int [12][8];
+
+        for (int i = 0; i < array.length; i++){
+            for (int j = 0; j < array[i].length; j++){
+                array[i][j] =rand.nextInt(50);
+            }
+        }
+
+        int maxLineValue = 0;
+
+        int lineCount = 0;
+
+        for (int i = 0; i < array.length; i++){
+            int lineSum = 0;
+
+            for (int j = 0; j < array[i].length; j++){
+                lineSum = lineSum + array[i][j];
+            }
+
+            if (maxLineValue<=lineSum){
+                maxLineValue = lineSum;
+                lineCount = i;
+            };
+
+
+        }
+        //System.out.println(maxLineValue + " "  + lineCount);
+
+        System.out.println("Индекс строки, сумма чисел в которой максимальна: "  + lineCount);
+
+
+
 
     }
 }

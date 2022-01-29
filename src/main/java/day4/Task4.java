@@ -15,7 +15,35 @@ package day4;
 //13036
 //7
 
+import java.util.Random;
+
 public class Task4 {
+    public static void main(String[] args) {
+
+        Random rand = new Random();
+        int[] array = new int[100];
+
+        for (int i=0; i<array.length; i++){
+            array[i]=rand.nextInt(10000);
+        }
+
+        int maxSum = 0;
+        int count = 0;
+        for (int i=1; i<array.length-1; i++){
+            int sumThree = array[i-1] + array[i] + array[i+1];
+            if (sumThree > maxSum){
+                maxSum = sumThree;
+                count = i-1;
+            }
+
+        }
+        System.out.println(maxSum);
+        System.out.println(count);
+
+
+
+    }
+
 
 
 }
