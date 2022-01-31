@@ -29,11 +29,18 @@ public class Task4 {
 
         int maxSum = 0;
         int count = 0;
-        for (int i=1; i<array.length-1; i++){
-            int sumThree = array[i-1] + array[i] + array[i+1];
+        for (int i=0; i<array.length-3; i++){ //проходим цикл от начала массива до первого элемента последнего блока из трех цифр, который не выйдет за пределы массива
+
+            int sumThree=0;
+
+            for (int j=0; j<3; j++) { // суммируем тройки (расширяемое решение)
+                sumThree = sumThree + array[j+i]; //  array[j+1] i=0  0.1.2    i=1 1.2.3  ...  i=27  27.28.29
+            }
+
+            //int sumThree = array[i-1] + array[i] + array[i+1];   старое нерасширяемое решение
             if (sumThree > maxSum){
                 maxSum = sumThree;
-                count = i-1;
+                count = i;
             }
 
         }
