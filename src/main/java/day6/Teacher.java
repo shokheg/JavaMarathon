@@ -3,8 +3,10 @@ package day6;
 import java.util.Random;
 
 public class Teacher {
-    String name;
-    String subject;
+    private String name;
+    private String subject;
+
+    Random random = new Random();
 
 
     public Teacher(String name, String subject){
@@ -29,7 +31,6 @@ public class Teacher {
     }
 
     public void evaluate(Student student){
-        Random random = new Random();
         int z = random.nextInt(4) + 2;
         String result;
         switch (z){
@@ -42,11 +43,12 @@ public class Teacher {
             case 4:
                 result = "хорошо";
                 break;
+            default:
             case 5:
                 result = "отлично";
                 break;
-            default:
-                throw new IllegalArgumentException("Неверная оценка "+z);
+
+
 
 
         }

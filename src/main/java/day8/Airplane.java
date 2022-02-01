@@ -1,8 +1,4 @@
-package day7;
-
-//В классе Самолет реализовать статический метод compareAirplanes,
-// который в качестве аргументов принимает два объекта класса Airplane (два самолета)
-// и выводит сообщение в консоль о том, какой из самолетов длиннее.
+package day8;
 
 public class Airplane {
 
@@ -11,6 +7,8 @@ public class Airplane {
     private int length;
     private int weight;
     private int fuel;
+
+    StringBuilder stringBuilder = new StringBuilder();
 
 
    public Airplane(String manufacturer, int year, int length, int weight){
@@ -21,16 +19,6 @@ public class Airplane {
        this.fuel = 0;
    }
 
-   public static void compareAirplanes(Airplane airplane1, Airplane airplane2){
-       if (airplane1.length > airplane2.length){
-           System.out.println("Самолет #1 " + airplane1.manufacturer + " длиннее чем самолет #2 " + airplane2.manufacturer);
-       } else if (airplane1.length< airplane2.length) {
-           System.out.println("Самолет #1 " + airplane1.manufacturer + " короче чем самолет #2 " + airplane2.manufacturer);
-       } else if (airplane1.length == airplane2.length) {
-           System.out.println("Длины самолетов равны");
-       }
-
-   }
 
     public void setManufacturer(String manufacturer){
 
@@ -63,6 +51,14 @@ public class Airplane {
 
     void fillUp(int n){
        this.fuel = this.fuel + n;
+    }
+
+    @Override
+    public String toString(){
+       return stringBuilder.append("Изготовитель: ").append(this.manufacturer).append(", год выпуска: ").append(this.year).append(", длина: ").append(this.length).append(", вес: ").append(this.weight).append(", количество топлива в баке: ").append(this.fuel).toString();
+
+
+
     }
 
 

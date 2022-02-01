@@ -27,13 +27,13 @@ public class Task2 {
 
         for (int i = 0; i<110; i++){
           player.run();
-           System.out.println(player.stamina);   //показывает текущую стамину
+
         }
         player.info();
 
         for (int i = 0; i<110; i++){
             player2.run();
-            System.out.println(player.stamina);  //показывает текущую стамину
+
         }
         player2.info();
 

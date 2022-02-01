@@ -6,8 +6,8 @@ public class Player {
 
     public static final int MAX_STAMINA = 100;
     public static final int MIN_STAMINA = 0;
-    public static int countPlayers;
-    Integer stamina;
+    static int countPlayers;
+    private Integer stamina;
 
     public Player(int stamina){
         if (countPlayers <6){
