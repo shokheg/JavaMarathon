@@ -43,14 +43,11 @@ public class Teacher {
             case 4:
                 result = "хорошо";
                 break;
-            default:
             case 5:
                 result = "отлично";
                 break;
-
-
-
-
+            default:               //предлагаю оставить так или как было изначально чтобы идея не ругалась на result may be not initialize
+                result = "Что-то пошло не так";
         }
 
 
