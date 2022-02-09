@@ -3,7 +3,7 @@ package day11.task2;
 public class Paladin extends Hero implements Healer, PhysAttack {
 
     public Paladin(){
-        super(15,50,0,20);
+        super(15,50,20);
 
     }
 
@@ -34,13 +34,7 @@ public class Paladin extends Hero implements Healer, PhysAttack {
         // т.е. атаковав воина типом Ф 10,
         // он получит урон не 10, а 2 ед. урона (10 - 10*0.8 = 2)
 
-        double fullAttack =  super.getPhysAtt()-(super.getPhysAtt()*(hero.getPhysDef()/100.0));
-
-        if ((hero.getHealth()-fullAttack)>0){
-            hero.setHealth((int) (hero.getHealth()-fullAttack));
-        } else {
-            hero.setHealth(0);
-        }
+        super.physicalAttack(hero);
     }
 
 

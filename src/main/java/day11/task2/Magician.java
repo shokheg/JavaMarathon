@@ -2,28 +2,23 @@ package day11.task2;
 
 public class Magician extends Hero implements MagicAttack,PhysAttack {
 
+    private int magicAtt = 20;
+
     public Magician (){
-        super(5,0,20,80);
+        super(5,0,80);
     }
 
 
     @Override
     public void physicalAttack(Hero hero) {
 
-        double fullAttack =  super.getPhysAtt()-(super.getPhysAtt()*(hero.getPhysDef()/100.0));
-
-        if ((hero.getHealth()-fullAttack)>0){
-            hero.setHealth((int) (hero.getHealth()-fullAttack));
-        } else {
-            hero.setHealth(0);
-        }
-
+        super.physicalAttack(hero);
     }
 
     @Override
     public void magicalAttack(Hero hero) {
 
-        double fullAttack =  super.getMagicAtt()-(super.getMagicAtt()*(hero.getMagicDef()/100.0));
+        double fullAttack =  magicAtt-(magicAtt*(hero.getMagicDef()/100.0));
 
         if ((hero.getHealth()-fullAttack)>0){
             hero.setHealth((int) (hero.getHealth()-fullAttack));

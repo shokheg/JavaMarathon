@@ -5,6 +5,10 @@ public class Courier implements Worker{
     private int salary;
     private boolean isPayed = false;
     private Warehouse warehouse;
+//constants
+    private final int COURIER_BONUS = 50000;
+    private final int DELIVERED_ORDERS_BONUS=10000;
+    private final int COURIER_SALARY_PER_ORDER=100;
 
     public Courier(Warehouse warehouse) {
        this.warehouse = warehouse;
@@ -29,15 +33,15 @@ public class Courier implements Worker{
 
     @Override
     public void doWork() {
-        this.salary = getSalary()+100;
+        this.salary = salary+COURIER_SALARY_PER_ORDER;
         this.warehouse.increaseCountDeliveredOrders();
 
     }
 
     @Override
     public void bonus() {
-        if (this.warehouse.getCountDeliveredOrders()>=10000 && isPayed == false){
-            this.salary = getSalary()+50000;
+        if (this.warehouse.getCountDeliveredOrders()>=DELIVERED_ORDERS_BONUS && isPayed == false){
+            this.salary = getSalary()+COURIER_BONUS;
             this.isPayed = true;
         } else System.out.println("Бонус пока недоступен");
 

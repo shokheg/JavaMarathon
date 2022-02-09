@@ -6,12 +6,11 @@ public abstract class Hero {
     private int physDef;
     private int magicDef;
     private int physAtt;
-    private int magicAtt;
 
-    public Hero(int physAtt, int physDef, int magicAtt, int magicDef){
+
+    public Hero(int physAtt, int physDef, int magicDef){
         health = 100;
         this.magicDef = magicDef;
-        this.magicAtt = magicAtt;
         this.physAtt = physAtt;
         this.physDef = physDef;
     }
@@ -27,10 +26,6 @@ public abstract class Hero {
         return physAtt;
     }
 
-    public int getMagicAtt() {
-        return magicAtt;
-    }
-
     public int getHealth() {
         return health;
     }
@@ -43,5 +38,17 @@ public abstract class Hero {
     public String toString() {
         return getClass().getSimpleName()+"{" +
                 "health=" + health +'}';
+    }
+
+    public void physicalAttack(Hero hero) {
+
+        double fullAttack =  this.getPhysAtt()-(this.getPhysAtt()*(hero.getPhysDef()/100.0));
+
+        if ((hero.getHealth()-fullAttack)>0){
+            hero.setHealth((int) (hero.getHealth()-fullAttack));
+        } else {
+            hero.setHealth(0);
+        }
+
     }
 }

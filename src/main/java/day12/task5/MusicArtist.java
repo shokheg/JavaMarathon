@@ -2,14 +2,6 @@ package day12.task5;
 
 public class MusicArtist {
 
-    @Override
-    public String toString() {
-        return "MusicArtist{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                '}';
-    }
-
     private String name;
     private Integer age;
 
@@ -32,6 +24,14 @@ public class MusicArtist {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "MusicArtist{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 
 

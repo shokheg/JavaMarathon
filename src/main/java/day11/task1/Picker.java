@@ -5,6 +5,10 @@ public class Picker implements Worker {
     private int salary;
     private boolean isPayed = false;
     private Warehouse warehouse;
+    //constants
+    private final int PICKER_BONUS = 70000;
+    private final int PICKED_ORDERS_BONUS=10000;
+    private final int PICKER_SALARY_PER_ORDER=800;
 
     public Picker(Warehouse warehouse) {
         this.warehouse = warehouse;
@@ -29,15 +33,15 @@ public class Picker implements Worker {
 
     @Override
     public void doWork() {
-        this.salary = getSalary()+80;
+        this.salary = getSalary()+PICKER_SALARY_PER_ORDER;
         this.warehouse.increaseCountPickedOrders();
 
     }
 
     @Override
     public void bonus() {
-        if (this.warehouse.getCountPickedOrders()>=10000 && this.isPayed == false){
-            this.salary = getSalary()+70000;
+        if (this.warehouse.getCountPickedOrders()>=PICKED_ORDERS_BONUS && this.isPayed == false){
+            this.salary = getSalary()+PICKER_BONUS;
             this.isPayed = true;
         } else System.out.println("Бонус пока недоступен");
 

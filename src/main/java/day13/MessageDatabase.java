@@ -18,9 +18,7 @@ public class MessageDatabase {
 //этот метод должен вывести цепочку сообщений (диалог) пользователей u1 и u2.
     public static void showDialog(User u1, User u2){
         for (int i=0; i< messages.size();i++){
-            if(u1.equals(messages.get(i).sender) && u2.equals(messages.get(i).receiver)){
-                System.out.println(messages.get(i));
-            } else if (u2.equals(messages.get(i).sender) && u1.equals(messages.get(i).receiver)){
+            if(u1.equals(messages.get(i).getSender()) && u2.equals(messages.get(i).getReceiver())||u2.equals(messages.get(i).getSender()) && u1.equals(messages.get(i).getReceiver())){
                 System.out.println(messages.get(i));
             }
         }

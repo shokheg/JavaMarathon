@@ -6,17 +6,6 @@ import java.util.List;
 public class User {
     String username;
     List<User> subscriptions;
-    List<User> friendsList;
-
-    public List<User> getFriendsList() {
-        return friendsList;
-    }
-
-    public void setFriendsList(List<User> friendsList) {
-        this.friendsList = friendsList;
-    }
-
-
 
     public String getUsername() {
         return username;
@@ -31,8 +20,6 @@ public class User {
     public User(String username) {
         this.username = username;
         this.subscriptions = new ArrayList<>();
-        this.friendsList = new ArrayList<>();
-
     }
 
 //подписывает пользователя на пользователя user
@@ -42,22 +29,14 @@ public class User {
 //возвращает True, если пользователь подписан на
 // пользователя user и False, если не подписан.
     public boolean isSubscribed(User user){
-        if (this.subscriptions.contains(user)){
-            return true;
-        } else return false;
+       return subscriptions.contains(user);
 
     }
 
-    public void friendship(User user){
-        this.friendsList.add(user);
-    }
-
-//возвращает True, если пользователь user является другом и False,
+    //возвращает True, если пользователь user является другом и False,
 // если пользователь user не является другом. Подумайте, что такое дружба в контексте соц. сетей.
     public boolean isFriend(User user){
-        if (this.friendsList.contains(user)){
-            return true;
-        } else return false;
+        return user.subscriptions.contains(this)&&this.subscriptions.contains(user);
     }
 //отправляет сообщение с текстом text пользователю user. Здесь должен
 // использоваться статический метод из MessageDatabase.

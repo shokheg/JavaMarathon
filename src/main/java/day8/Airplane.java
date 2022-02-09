@@ -7,7 +7,7 @@ public class Airplane {
     private int length;
     private int weight;
     private int fuel;
-    private String info;
+
 
 
 
@@ -56,8 +56,8 @@ public class Airplane {
     @Override
     public String toString(){
 
-      info = "Изготовитель: " + this.manufacturer + ", год выпуска: " + this.year + ", длина: " + this.length + ", вес: " + this.weight + ", количество топлива в баке: " + this.fuel;
-        return info;
+      return "Изготовитель: " + this.manufacturer + ", год выпуска: " + this.year + ", длина: " + this.length + ", вес: " + this.weight + ", количество топлива в баке: " + this.fuel;
+
 
 
     }

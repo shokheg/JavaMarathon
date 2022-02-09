@@ -41,14 +41,8 @@ public class MusicBand {
         this.year = year;
     }
     public static void transferMembers (MusicBand band1, MusicBand band2){
-      MusicArtist member;
-       for (int i=0; i<band1.getMembersOfBand().size(); i++){
-           member = band1.getMembersOfBand().get(i);
-           band2.getMembersOfBand().add(member);
-
-       }
-
-        band1.membersOfBand.removeAll(band2.membersOfBand);
+        band2.membersOfBand.addAll(band1.membersOfBand);
+        band1.membersOfBand.clear();
 
     }
 

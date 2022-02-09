@@ -1,0 +1,9 @@
+Mike 24
+John 19
+Anna 20
+Miguel 5
+Ann 84
+Igor 12
+Simon 24
+Helen 99
+

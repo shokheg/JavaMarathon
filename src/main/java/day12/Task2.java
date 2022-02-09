@@ -9,11 +9,8 @@ public class Task2 {
         List <Integer> numList = new ArrayList<>();
 
         for (int i=0; i<350;i++){
-            if (i>30&&i<300){
-
-            }else  if (i%2==0)
-            numList.add(i);
-
+            if ((i<=30||i>=300)&&i%2==0)
+                numList.add(i);
 
         }
 
